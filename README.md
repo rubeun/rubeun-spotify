@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Rubeun's Spotify App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React App to search for Artists, Music utilising Spotify's API 
 
 ## Available Scripts
 
