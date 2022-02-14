@@ -2,6 +2,11 @@
 
 React App to search for Artists, Music utilising Spotify's API 
 
+## Documentation
+
+[Spotify API Documentation](https://developer.spotify.com/documentation/web-api/reference)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
