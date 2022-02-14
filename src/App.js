@@ -1,7 +1,20 @@
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { getAuth } from './api/spotify';
 
 function App() {
+  const [authorised, setAuthorised] = useState(false);
+
+  useEffect(() => {
+    getAuth().then((token) => {
+      window.spotify_auth_token = token;
+      setAuthorised(true);
+    });
+  }, []);
+
+  if (!authorised) return null;
+
   return (
     <div className="App">
       <header className="App-header">
