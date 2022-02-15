@@ -6,6 +6,8 @@ React App to search for Artists, Music utilising Spotify's API
 
 [Spotify API Documentation](https://developer.spotify.com/documentation/web-api/reference)
 
+Before running app, copy contents of .env.dev.local to a file called .env.development.local and enter your Spotify Client ID and Secret to access the Spotify API
+
 
 ## Available Scripts
 
