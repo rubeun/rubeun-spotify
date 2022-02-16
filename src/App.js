@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import { getAuth } from './api/spotify';
+
+import Home from './routes/Home';
 
 function App() {
   const [authorised, setAuthorised] = useState(false);
@@ -18,13 +19,13 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Rubeun's Spotify App
-        </p>
-      </header>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          
+        </Routes>
+      </Router>
     </div>
   );
 }
