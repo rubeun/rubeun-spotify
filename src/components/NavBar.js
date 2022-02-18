@@ -1,9 +1,9 @@
 import React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
 import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
-import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Search = styled('div')(({ theme }) => ({
@@ -48,7 +48,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 const NavBar = () => (
   <AppBar position='static'>
     <Toolbar>
-      <Typography variant='h6' color='inherit' noWrap>Rubeun's Spotify App</Typography>
+      <Avatar alt='Avatar of Rubeun' src='http://portfolio.rubeun.com/img/favicon-96x96.png' />
       <Search>
         <SearchIconWrapper>
           <SearchIcon />
