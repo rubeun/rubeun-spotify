@@ -1,6 +1,7 @@
 .App-logo {
   height: 10vmin;
   pointer-events: none;
+  margin-bottom: 50px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -11,7 +12,9 @@
 
 .App-header {
   background-color: #444;
-  min-height: 100vh;
+  opacity: 0.8;
+  height: '100%';
+  width: '50%';
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,6 +25,15 @@
 
 .App-link {
   color: #61dafb;
+}
+
+#techno-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -100;
 }
 
 @keyframes App-logo-spin {

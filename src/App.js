@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material';
 import NavBar from './components/NavBar';
 import { getAuth } from './api/spotify';
+import VideoBackground from './components/VideoBackground';
 
 import Home from './routes/Home';
 
@@ -39,6 +40,7 @@ function App() {
           
         </Routes>
       </Router>
+      <VideoBackground />
     </ThemeProvider>    
   );
 }
