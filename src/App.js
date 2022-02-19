@@ -6,6 +6,7 @@ import { getAuth } from './api/spotify';
 import VideoBackground from './components/VideoBackground';
 
 import Home from './routes/Home';
+import Artists from './routes/Artists';
 
 const theme = createTheme({
   components: {
@@ -37,7 +38,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          
+          <Route exact path="/artists" element={<Artists />} />          
         </Routes>
       </Router>
       <VideoBackground />

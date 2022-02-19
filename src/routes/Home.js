@@ -4,7 +4,7 @@ import { Container, Box, Typography } from '@mui/material';
 import '../App.css';
 
 const Home = () => (
-  <Container className='homeContainer' maxWidth="md">
+  <Container className='homeContainer' maxWidth='md'>
     <Box sx={{ 
       bgcolor: 'black', 
       opacity: 0.5, 
@@ -14,7 +14,7 @@ const Home = () => (
       borderRadius: '10px',
       marginTop: '10%'
      }}>
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={logo} className='App-logo' alt='Spotify logo' />
       <Typography variant='h3'>
         Rubeun's Spotify App
       </Typography>
