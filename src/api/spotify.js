@@ -24,3 +24,25 @@ export const getAuth = () => {
     .post('https://accounts.spotify.com/api/token', qs.stringify(params), headers)
     .then(({ data }) => data.access_token);
 };
+
+export const searchForArtist = (searchText, type = 'artist') => {
+  const headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Authorization': `Bearer ${window.spotify_auth_token}`,
+  };
+
+  const params = {
+    q: encodeURI(searchText),
+    type,
+    limit: 10,
+    market: 'US',
+  };
+
+  return axios
+    .get('https://api.spotify.com/v1/search', {
+      headers,
+      params,
+    })
+    .then(({ data }) => data);
+};
