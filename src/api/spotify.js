@@ -46,3 +46,17 @@ export const searchForArtist = (searchText, type = 'artist') => {
     })
     .then(({ data }) => data);
 };
+
+export const artistInfo = artistId => {
+  const headers = {
+    Accept: 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    Authorization: `Bearer ${window.spotify_auth_token}`,
+  };
+
+  return axios
+    .get(`https://api.spotify.com/v1/artists/${artistId}`, {
+      headers,
+    })
+    .then(({ data }) => data);  
+};
