@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { searchForArtist } from '../api/spotify';
 
 import { 
-  Container, 
   Box, 
   Typography, 
   TextField,
 } from '@mui/material';
-
+import Background from '../components/Background';
 import ArtistResults from '../components/ArtistResults';
 
 
@@ -32,50 +31,36 @@ const Artists = () => {
   }, [searchText]);
 
   return (
-    <Container className='artistsContainer' maxWidth='md'>
-      <Box 
-        sx={{ 
-          bgcolor: 'black', 
-          opacity: 0.5, 
-          color: 'white', 
-          textAlign: 'center', 
-          padding: '4em',
-          borderRadius: '10px',
-          marginTop: '10%',    
-        }}>
+    <Background>
+      <Typography variant='h3'>Artist Search</Typography>
 
-        <Typography variant='h3'>Artists</Typography>
+      <TextField
+        color='info'
+        label='Search for Artist'
+        value={searchText}
+        onChange={onTextChange}
+        fullWidth
+        sx={{
+          marginTop: '2em',
+          bgcolor: 'white',
+          color: 'black'
+        }}
+      />
 
-        <TextField
-          color='info'
-          label='Search for Artist'
-          value={searchText}
-          onChange={onTextChange}
-          fullWidth
-          sx={{
-            marginTop: '2em',
-            bgcolor: 'white',
-            color: 'black'
-          }}
-        />
-
-        {searchText !== '' ?
-          noResults ?
-            <Typography variant='error'>No Artist Found</Typography>
-            :
-            <Box
-              sx={{
-                padding: '1em',
-              }}
-            >
-              <ArtistResults searchResults={searchResults} /> 
-            </Box>
-          : <Typography variant='caption'>Please type in an artist name above</Typography>
-        }
-      </Box>
-
-
-    </Container>
+      {searchText !== '' ?
+        noResults ?
+          <Typography variant='error'>No Artist Found</Typography>
+          :
+          <Box
+            sx={{
+              padding: '1em',
+            }}
+          >
+            <ArtistResults searchResults={searchResults} /> 
+          </Box>
+        : <Typography variant='caption'>Please type in an artist name above</Typography>
+      }
+    </Background>    
   );
 };
 
