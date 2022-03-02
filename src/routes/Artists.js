@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { searchForArtist } from '../api/spotify';
+import ClearIcon from '@mui/icons-material/Clear';
 
 import { 
   Box, 
   Typography, 
-  TextField,
+  Input,
+  IconButton,
+  InputAdornment,
 } from '@mui/material';
 import Background from '../components/Background';
 import ArtistResults from '../components/ArtistResults';
@@ -14,8 +17,13 @@ const Artists = () => {
   const [searchText, setSearchText] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [noResults, setNoResults] = useState(false);
+  const searchInputRef = useRef();
 
   const onTextChange = (e) => setSearchText(e.target.value);
+  const handleClearSearch = () => {
+    setSearchText('');
+    searchInputRef.current.focus();
+  }
 
   useEffect(() => {
     if (!searchText) return;
@@ -34,17 +42,32 @@ const Artists = () => {
     <Background>
       <Typography variant='h3'>Artist Search</Typography>
 
-      <TextField
+      <Input
         color='info'
-        label='Search for Artist'
+        placeholder='Artist Name'
         value={searchText}
         onChange={onTextChange}
         fullWidth
+        autoFocus={true}
+        inputRef={searchInputRef}
         sx={{
           marginTop: '2em',
           bgcolor: 'white',
-          color: 'black'
+          color: 'black',
+          height: '50px',
+          paddingLeft: '1em',
+          fontSize: '1.5em',
         }}
+        endAdornment={
+          <InputAdornment position='end'>
+            <IconButton
+              aria-label='clear search icon'
+              onClick={handleClearSearch}
+            >
+              <ClearIcon />
+            </IconButton>
+          </InputAdornment>
+        }
       />
 
       {searchText !== '' ?
