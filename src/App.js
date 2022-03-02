@@ -20,6 +20,17 @@ const theme = createTheme({
   }
 });
 
+const navRoutes = [
+  {
+    title: 'Home', 
+    url: '/'
+  }, 
+  {
+    title: 'Artists', 
+    url: '/artists'
+  }
+];
+
 function App() {
   const [authorised, setAuthorised] = useState(false);
 
@@ -35,11 +46,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <NavBar />
+        <NavBar navLinks={navRoutes} />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/artists" element={<Artists />} />          
-        </Routes>
+          <Route exact path={navRoutes[0].url} element={<Home />} />
+          <Route exact path={navRoutes[1].url} element={<Artists />} />          
+        </Routes> 
       </Router>
       <VideoBackground />
     </ThemeProvider>    
