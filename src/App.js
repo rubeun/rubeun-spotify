@@ -7,6 +7,7 @@ import VideoBackground from './components/VideoBackground';
 
 import Home from './routes/Home';
 import Artists from './routes/Artists';
+import Artist from './routes/Artist';
 
 const theme = createTheme({
   components: {
@@ -23,12 +24,12 @@ const theme = createTheme({
 const navRoutes = [
   {
     title: 'Home', 
-    url: '/'
+    url: '/',
   }, 
   {
     title: 'Artists', 
-    url: '/artists'
-  }
+    url: '/artists',
+  },
 ];
 
 function App() {
@@ -50,6 +51,8 @@ function App() {
         <Routes>
           <Route exact path={navRoutes[0].url} element={<Home />} />
           <Route exact path={navRoutes[1].url} element={<Artists />} />          
+          <Route path='/artist/:artistId' element={<Artist />} />
+
         </Routes> 
       </Router>
       <VideoBackground />
