@@ -47,7 +47,7 @@ export const searchForArtist = (searchText, type = 'artist') => {
     .then(({ data }) => data);
 };
 
-export const artistInfo = artistId => {
+export const getArtistInfo = artistId => {
   const headers = {
     Accept: 'application/json',
     'Content-Type': 'application/x-www-form-urlencoded',
