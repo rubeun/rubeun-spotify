@@ -5,6 +5,8 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
+import { ListItemButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const ArtistResults = ({ searchResults }) => {
 
@@ -17,19 +19,26 @@ const ArtistResults = ({ searchResults }) => {
           <ListItem 
             alignItems="flex-start" 
             key={result.id}
+            component={Link}
+            to={`/artist/${result.id}`}
           >
-            <ListItemAvatar>
-              <Avatar alt={result.name} src={imageURL} />
-            </ListItemAvatar>
-            <ListItemText
-              primary={result.name}
-              secondary={
-                <Typography
-                  sx={{ textTransform: 'capitalize' }}
-                  variant='body2'
-                >{artistGenres}</Typography>
-              }
-            />
+            <ListItemButton>
+              <ListItemAvatar>
+                <Avatar alt={result.name} src={imageURL} />
+              </ListItemAvatar>
+              <ListItemText
+                primary={result.name}
+                secondary={
+                  <Typography
+                    sx={{ textTransform: 'capitalize' }}
+                    variant='body2'
+                  >{artistGenres}</Typography>
+                }
+                sx={{
+                  color: 'white',
+                }}
+              />
+            </ListItemButton>
           </ListItem>   
         )   
       })}
