@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Typography } from '@mui/material';
+import { Grid, styled, Typography } from '@mui/material';
 import { getArtistInfo } from '../api/spotify';
 
 import Background from '../components/Background';
@@ -36,10 +36,26 @@ const Artist = () => {
     );
   }
 
+  const imageURL = artist.images.length > 0 ? artist.images[0].url : '';
+
+  const ImageItem = styled('img')({
+    width: '100%',
+  });
+
   return (
     <Background>
-      <Typography variant='h3'>{artist.name}</Typography>
-
+      <Grid container>
+        <Grid item xs={4}>
+          <ImageItem src={imageURL} alt={artist.name} />
+        </Grid>
+        <Grid item xs={8}>
+          <Typography variant='h3'>{artist.name}</Typography>
+          <br />
+          {artist.genres.map((genre, i) => <Typography key={i} variant='h5'>{genre}</Typography>)}
+          <br />
+          <Typography variant='body'>Followers: {artist.followers.total}</Typography>
+        </Grid>
+      </Grid>
 
     </Background>    
   );
