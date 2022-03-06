@@ -60,3 +60,17 @@ export const getArtistInfo = artistId => {
     })
     .then(({ data }) => data);  
 };
+
+export const getRelatedArtists = artistId => {
+  const headers = {
+    Accept: 'application/json',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    Authorization: `Bearer ${window.spotify_auth_token}`,
+  };
+
+  return axios
+    .get(`https://api.spotify.com/v1/artists/${artistId}/related-artists`, {
+      headers,
+    })
+    .then(({ data }) => data);  
+};
