@@ -13,7 +13,7 @@ const ArtistResults = ({ searchResults }) => {
   return (
     <List sx={{ width: '100%' }}>
       {searchResults.map(result => {
-        let imageURL = result.images.length > 0 ? result.images[0].url : '';
+        let imageURL = result.images.length > 2 ? result.images[2].url : ''; // Spotify provides 3 image sizes in 640, 320 & 160
         let artistGenres = result.genres.length > 0 ? result.genres.join(', ') : 'Unknown Genre';
         return (
           <ListItem 
