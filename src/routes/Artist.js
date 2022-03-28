@@ -57,10 +57,10 @@ const Artist = () => {
   return (
     <Background>
       <Grid container>
-        <Grid item xs={4}>
+        <Grid item sm={4} xs={12}>
           <ImageItem src={imageURL} alt={artist.name} />
         </Grid>
-        <Grid item xs={8}>
+        <Grid item sm={8} xs={12}>
           <Typography variant='h3'>{artist.name}</Typography>
           <br />
           {artist.genres.map((genre, i) => <Typography key={i} variant='h5'>{genre}</Typography>)}
