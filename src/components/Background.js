@@ -3,7 +3,7 @@ import { Container, Box } from '@mui/material';
 import '../App.css';
 
 const Background = ({ children }) => (
-  <Container className='homeContainer' maxWidth='md'>
+  <Container className='homeContainer' maxWidth='lg'>
     <Box sx={{ 
       bgcolor: 'black', 
       opacity: 0.8, 
