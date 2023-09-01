@@ -1,6 +1,7 @@
 # Rubeun's Spotify App
 
-React App to search for Artists, Music utilising Spotify's API 
+React App to search for Artists, Music utilising Spotify's API
+
 
 ## Documentation
 
@@ -11,6 +12,9 @@ Before running app, copy contents of .env.dev.local to a file called .env.develo
 REACT_APP_SPOTIFY_CLIENT_ID=
 REACT_APP_SPOTIFY_CLIENT_SECRET=
 
+Note: Runs on Node version 16
+
+### `npm install`
 
 ## Available Scripts
 
