@@ -2,6 +2,8 @@
 
 React App to search for Artists, Music utilising Spotify's API
 
+[Demo the App](https://rubeun-spotify.netlify.app/)
+
 
 ## Documentation
 
